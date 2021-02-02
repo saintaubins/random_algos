@@ -47,3 +47,29 @@ print('x_o = ',x_o)
 print(p.find_prime())
 #print(inspect.getsource(count))
 
+
+##################### 2-1-21 Apple interview question 6;45pm EST ########################
+a = [22,25]
+b = ['python', 'programming']
+
+"""return odd-indexed list from list a -> [25,46]""" 
+
+for i,v in enumerate(a):
+    if i % 2 != 0:
+        print(v, a[i])
+    
+
+# slicing ->
+print(a[1:len(a):2])
+print(a[1::2])
+# then second question merge a:b into key value
+res = {}
+for k,v in zip(a,b):
+    res[k] = v
+print(res)
+
+print({k:v for k,v in zip(a,b)})
+
+## my solution
+print(dict(zip(a,b)))
+

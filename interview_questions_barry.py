@@ -75,7 +75,6 @@ def HTMLElements(strParam):
   
    
     for i in strParam:
-        i_closed = i.replace('<','</')
         if i == '<div>' and '</div>' in strParam:
             strParam.pop(strParam.index('<div>'))
             strParam.pop(strParam.index('</div>'))
@@ -96,8 +95,8 @@ def HTMLElements(strParam):
             strParam.pop(strParam.index('<p>'))
             strParam.pop(strParam.index('</p>'))
             #print(strParam)
-        print('i = ',i,'i_closed = ',i_closed, 'strParam = ',strParam)  
     for i in strParam:
+        i_closed = i.replace('<','</')
         if i == '<div>' and strParam[1] != '</div>':
             print(strParam[1], 'needs to be </div>')
         if i == '<b>' and strParam[1] != '</b>':
@@ -109,6 +108,7 @@ def HTMLElements(strParam):
         if i == '<p>' and strParam[1] != '</p>':
             print(strParam[1], 'needs to be </p>')
         
+        print('i = ',i,'i_closed = ',i_closed, 'strParam = ',strParam)  
     #return strParam
 HTMLElements(strParam)  
 # keep this function call here 
